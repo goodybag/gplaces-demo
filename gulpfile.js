@@ -5,7 +5,7 @@ var config    = require('./config');
 gulp.util     = require('gulp-util');
 
 var globs = {
-  scripts: ['*.js', 'public/js/*.js', 'public/js/lib/*.js', 'lib/*.js']
+  scripts: ['*.js', 'lib/*.js', 'public/js/*.js', 'public/js/lib/*.js', 'public/js/views/*.js']
 };
 
 globs.lint = globs.scripts.concat([]);
@@ -24,6 +24,11 @@ gulp.task( 'less', function(){
     .pipe( require('gulp-less')() )
     .pipe( require('gulp-autoprefixer')() )
     .pipe( gulp.dest('public/dist') );
+});
+
+gulp.task( 'font-awesome', function(){
+  return gulp.src('./node_modules/font-awesome/fonts/*')
+    .pipe( gulp.dest('./public/dist/font') );
 });
 
 gulp.task( 'lint', function(){
@@ -55,5 +60,5 @@ gulp.task( 'watch', function(){
   gulp.watch( ['less/*.less', 'less/**/*.less'], ['less'] );
 });
 
-gulp.task( 'build', [ 'less', 'lint', 'scripts' ] );
+gulp.task( 'build', [ 'less', 'font-awesome', 'lint', 'scripts' ] );
 gulp.task( 'default', [ 'build', 'server', 'watch' ] );

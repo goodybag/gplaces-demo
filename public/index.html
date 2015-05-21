@@ -26,5 +26,57 @@
         </div>
       </div>
     </section>
+
+    <section class="section" id="install-and-usage-section">
+      <div class="container">
+        <div class="col info">
+          <h1 class="section-title"><i class="fa fa-code"></i> Install and Usage</h1>
+          <p>Gplaces is installable via <a href="https://npmjs.org" target="_blank">npm</a> and <a href="http://bower.io/" target="_blank">bower</a>.</p>
+        </div>
+        <div class="col install-and-usage">
+          <pre><code>npm install -S gplaces
+-- or
+bower -S install gplaces</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="usage-1-section">
+      <div class="container">
+        <div class="col info">
+          <p>Using gplaces with <a href="https://nodejs.org">node.js</a> and <a href="browserify.org">browserify</a> is super easy.</p>
+          <p>First, setup your proxy. Here's how to do it in Express:</p>
+        </div>
+        <div class="col install-and-usage">
+          <pre><code class="javascript">// Setup your path anywhere you'd like
+app.get('/api/gplaces'
+, require('gplaces').proxy({
+    // Make sure you get an API key Places Autocomplete
+    // https://code.google.com/apis/console
+    key: 'MY_GOOGLE_API_KEY'
+  })
+);</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="usage-2-section">
+      <div class="container">
+        <div class="col info">
+          <p>Next up, in your client-side build file, configure gplaces.http to point to your proxy. We'll be using jquery's getJSON method in this example</p>
+        </div>
+        <div class="col install-and-usage">
+          <pre><code class="javascript">var gplaces = require('gplaces');
+
+// You must tell gplaces how to make the request to your
+// proxied API
+gplaces.http( function( input, callback ){
+  $.getJSON( '/api/gplaces?input=' + input )
+    .error( callback )
+    .success( callback.bind( null, null ) );
+});</code></pre>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

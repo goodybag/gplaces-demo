@@ -6,13 +6,24 @@
 
 #components {
   .container( @width ){
-    display: table;
+    #util > #flex > .display();
+    #util > #flex > .direction(row);
     width: 100%;
     max-width: @width;
     margin: 0 auto;
 
+
     @media screen and ( max-width: @width ){
       #sizing > #standard > .padding-horizontal();
+      #util > #flex > .direction(column);
+    }
+
+    @media screen and ( max-width: @breakpoint-mobile ){
+      #sizing > #standard > .padding-horizontal();
+    }
+
+    .col {
+      #util > #flex > .flex();
     }
   }
 }
