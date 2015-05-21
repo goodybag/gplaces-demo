@@ -1,4 +1,3 @@
-var $     = require('jquery');
 var utils = require('../lib/utils');
 
 module.exports = function( el, options ){
@@ -13,6 +12,9 @@ module.exports = function( el, options ){
 
   , run: function(){
       var typeChars = function( str ){
+        // End of the line?
+        // Press `down arrow` to select the first item
+        // Then `enter` to close
         if ( str.length === 0 ){
           this.el.dispatchEvent( this.getEvent(40) );
           return setTimeout( this.el.dispatchEvent.bind( this.el, this.getEvent(13) ), 100 );

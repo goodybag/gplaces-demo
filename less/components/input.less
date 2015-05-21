@@ -4,12 +4,27 @@
     width: 100%;
     font-size: 1.5rem;
 
+    .theme('purple-red');
+    .theme('dark');
+
     &.theme-purple-red,
-    .theme-purple-red & {
+    .theme-purple-red &,
+    &.theme-dark,
+    .theme-dark & {
       background: rgba(255, 255, 255, 0.1);
       border: none;
       border-bottom: dotted 2px rgba(0, 0, 0, 0.3);
-      color: #fff;
+    }
+  }
+
+  .theme( @theme ){
+    @selector: e(@theme);
+    
+    .theme-@{selector} &,
+    &.theme-@{selector} {
+      .get-theme( @theme );
+      .background();
+      .color();
     }
   }
 }
