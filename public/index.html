@@ -6,7 +6,7 @@
     <script src="/dist/app.js"></script>
   </head>
   <body>
-    <section class="section big-ol-section purple-red" id="intro-section">
+    <section class="section big-ol-section theme-purple-red" id="intro-section">
       <div class="container" style="">
         <div class="intro-text">
           <h1 class="section-title">Google Places Autocomplete</h1>
@@ -75,6 +75,75 @@ gplaces.http( function( input, callback ){
     .error( callback )
     .success( callback.bind( null, null ) );
 });</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="examples-1-section">
+      <div class="container">
+        <div class="col info">
+          <h1 class="section-title"><i class="fa fa-server"></i> Examples</h1>
+          <p>Gplaces comes with a few variants you can play around with.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="examples-2-section">
+      <div class="container">
+        <div class="col info">
+          <h2 class="variant-title">Default</h2>
+        </div>
+        <div class="col">
+          <input type="text" data-gplaces>
+          <pre><code class="html"><input data-gplaces></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section theme-dark" id="examples-2-section">
+      <div class="container">
+        <div class="col info">
+          <h2 class="variant-title">Dark</h2>
+        </div>
+        <div class="col">
+          <input type="text" data-gplaces data-variant="dark">
+          <pre><code class="html"><input data-gplaces data-variant="dark"></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="examples-2-section">
+      <div class="container">
+        <div class="col info">
+          <h2 class="variant-title">Flip</h2>
+        </div>
+        <div class="col">
+          <input type="text" data-gplaces data-variant="flip">
+          <pre><code class="html"><input data-gplaces data-variant="flip"></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section theme-dark" id="examples-2-section">
+      <div class="container">
+        <div class="col info">
+          <h2 class="variant-title">Flip + Dark</h2>
+        </div>
+        <div class="col">
+          <input type="text" data-gplaces data-variant="flip dark">
+          <pre><code class="html"><input data-gplaces data-variant="flip dark"></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="examples-2-section">
+      <div class="container">
+        <div class="col info">
+          <h2 class="variant-title">Bouncy</h2>
+        </div>
+        <div class="col">
+          <input type="text" data-gplaces data-variant="bouncy">
+          <pre><code class="html"><input data-gplaces data-variant="bouncy"></code></pre>
         </div>
       </div>
     </section>

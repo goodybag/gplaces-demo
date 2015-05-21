@@ -16,9 +16,20 @@
       font-weight: 300;
     }
 
-    .purple-red &,
-    &.purple-red {
-      .get-theme('purple-red');
+    .theme('purple-red');
+    .theme('dark');
+
+    .theme-purple-red &,
+    &.theme-purple-red {
+      box-shadow: inset 0 -3px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .theme( @theme ){
+    @selector: e(@theme);
+    .theme-@{selector} &,
+    &.theme-@{selector} {
+      .get-theme( @theme );
       .background();
       .color();
       box-shadow: inset 0 -3px 10px rgba(0, 0, 0, 0.1);

@@ -3,19 +3,32 @@
 ////////////
 
 .get-theme( @theme ) when ( @theme = 'purple-red' ){ #themes > #purple-red(); }
+.get-theme( @theme ) when ( @theme = 'dark' ){ #themes > #dark(); }
 
 #themes {
-  #purple-red {
-    @background: @palette-purple;
-    @background-secondary: @palette-red;
-    @color: #fff;
+  .create( @bg, @bg-secondary, @_color ){
+    @background: @bg;
+    @background-secondary: @bg-secondary;
+    @color: @_color;
 
     .background(){
-      background: linear-gradient( 90deg, @background 10%, @background-secondary 90% );
+      background: @background;
     }
 
     .color(){
       color: @color;
     }
+  }
+
+  #purple-red {
+    #themes > .create( @palette-purple, @palette-red, #fff );
+
+    .background(){
+      background: linear-gradient( 90deg, @background 10%, @background-secondary 90% );
+    }
+  }
+
+  #dark {
+    #themes > .create( @palette-gray-dark, @palette-gray-dark, #fff );
   }
 }
