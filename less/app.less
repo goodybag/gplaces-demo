@@ -1,0 +1,59 @@
+/////////
+// App //
+/////////
+
+@import (less) "http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Slabo+27px";
+
+@import (less) "../node_modules/highlight.js/styles/dark.css";
+@import "../node_modules/gplaces/less/components/gplaces.less";
+
+@import "./mixins.less";
+@import "./theme.less";
+
+@import "./components/typography.less";
+@import "./components/goodybag-logo.less";
+@import "./components/input.less";
+@import "./components/container.less";
+@import "./components/section.less";
+
+#components > .typography();
+
+.container { #components > .container( 1024px ); }
+.section { #components > .section(); }
+.goodybag-logo { #components > .goodybag-logo(250px); }
+input { #components > .input(); }
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: Lato;
+  margin: 0;
+  padding: 0;
+}
+
+#intro-section {
+  > .container {
+    #util > #flex > .display();
+    #util > #flex > .direction(row);
+  }
+  
+  .intro-text {
+    width: 70%;
+  }
+
+  .intro-example {
+    max-width: 400px;
+    margin-top: 40px;
+  }
+
+  .intro-supporting-graphic {
+    width: 30%;
+    text-align: center;
+  }
+
+  .hljs {
+    background: rgba( 68, 68, 68, 0.18 );
+  }
+}

@@ -1,0 +1,21 @@
+////////////
+// Themes //
+////////////
+
+.get-theme( @theme ) when ( @theme = 'purple-red' ){ #themes > #purple-red(); }
+
+#themes {
+  #purple-red {
+    @background: #7b4397;
+    @background-secondary: #dc2430;
+    @color: #fff;
+
+    .background(){
+      background: linear-gradient( 90deg, @background 10%, @background-secondary 90% );
+    }
+
+    .color(){
+      color: @color;
+    }
+  }
+}

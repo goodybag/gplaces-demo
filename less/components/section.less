@@ -1,0 +1,27 @@
+/////////////
+// Section //
+/////////////
+
+#components {
+  .section(){
+    #sizing > #large > .padding-vertical();
+
+    &.big-ol-section {
+      #sizing > #extra-large > .padding-vertical();
+    }
+
+    .section-title + p {
+      opacity: 0.84;
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+
+    .purple-red &,
+    &.purple-red {
+      .get-theme('purple-red');
+      .background();
+      .color();
+      box-shadow: inset 0 -3px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+}

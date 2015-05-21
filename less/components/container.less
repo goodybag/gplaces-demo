@@ -1,0 +1,18 @@
+///////////////
+// Container //
+///////////////
+
+@import "../mixins.less";
+
+#components {
+  .container( @width ){
+    display: table;
+    width: 100%;
+    max-width: @width;
+    margin: 0 auto;
+
+    @media screen and ( max-width: @width ){
+      #sizing > #standard > .padding-horizontal();
+    }
+  }
+}
