@@ -10,7 +10,13 @@ var globs = {
 
 globs.lint = globs.scripts.concat([]);
 
-gulp.task( 'scripts', function(){
+gulp.task( 'ensure-dist', function( done ){
+  fs.mkdir('./public/dist', function( error ){
+    done();
+  });
+});
+
+gulp.task( 'scripts', ['ensure-dist'], function(){
   return require('browserify')({
       debug: true
     })
