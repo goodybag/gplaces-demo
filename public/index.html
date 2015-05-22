@@ -21,14 +21,17 @@
           </div>
         </div>
 
-        <div class="intro-supporting-graphic">
+        <div class="intro-supporting-graphic logo-support">
           <div class="goodybag-logo"></div>
+          <div class="credit">
+            <a href="https://www.goodybag.com" target="_blank">Goodybag.com</a>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section" id="install-and-usage-section">
-      <div class="container">
+      <div class="container example-row two-col">
         <div class="col info">
           <h1 class="section-title"><i class="fa fa-code"></i> Install and Usage</h1>
           <p>Gplaces is installable via <a href="https://npmjs.org" target="_blank">npm</a> and <a href="http://bower.io/" target="_blank">bower</a>.</p>
@@ -42,7 +45,7 @@ bower -S install gplaces</code></pre>
     </section>
 
     <section class="section" id="usage-1-section">
-      <div class="container">
+      <div class="container example-row two-col">
         <div class="col info">
           <p>Using gplaces with <a href="https://nodejs.org">node.js</a> and <a href="browserify.org">browserify</a> is super easy.</p>
           <p>First, setup your proxy. Here's how to do it in Express:</p>
@@ -61,7 +64,7 @@ app.get('/api/gplaces'
     </section>
 
     <section class="section" id="usage-2-section">
-      <div class="container">
+      <div class="container example-row two-col">
         <div class="col info">
           <p>Next up, in your client-side build file, configure gplaces.http to point to your proxy. We'll be using jquery's getJSON method in this example</p>
         </div>
@@ -80,7 +83,7 @@ gplaces.http( function( input, callback ){
     </section>
 
     <section class="section" id="examples-1-section">
-      <div class="container">
+      <div class="container example-row two-col">
         <div class="col info">
           <h1 class="section-title"><i class="fa fa-server"></i> Examples</h1>
           <p>Gplaces comes with a few variants you can play around with.</p>
@@ -89,7 +92,7 @@ gplaces.http( function( input, callback ){
     </section>
 
     <section class="section" id="examples-2-section">
-      <div class="container">
+      <div class="container example-row two-col">
         <div class="col info">
           <h2 class="variant-title">Default</h2>
         </div>
@@ -100,8 +103,8 @@ gplaces.http( function( input, callback ){
       </div>
     </section>
 
-    <section class="section theme-dark" id="examples-2-section">
-      <div class="container">
+    <section class="section theme-gray-dark-blue" id="examples-2-section">
+      <div class="container example-row two-col">
         <div class="col info">
           <h2 class="variant-title">Dark</h2>
         </div>
@@ -113,7 +116,7 @@ gplaces.http( function( input, callback ){
     </section>
 
     <section class="section" id="examples-2-section">
-      <div class="container">
+      <div class="container example-row two-col">
         <div class="col info">
           <h2 class="variant-title">Flip</h2>
         </div>
@@ -124,8 +127,8 @@ gplaces.http( function( input, callback ){
       </div>
     </section>
 
-    <section class="section theme-dark" id="examples-2-section">
-      <div class="container">
+    <section class="section theme-gray-dark-blue" id="examples-2-section">
+      <div class="container example-row two-col">
         <div class="col info">
           <h2 class="variant-title">Flip + Dark</h2>
         </div>
@@ -137,7 +140,7 @@ gplaces.http( function( input, callback ){
     </section>
 
     <section class="section" id="examples-2-section">
-      <div class="container">
+      <div class="container example-row two-col">
         <div class="col info">
           <h2 class="variant-title">Bouncy</h2>
         </div>

@@ -1,0 +1,17 @@
+/////////////////
+// Example Row //
+/////////////////
+
+#components {
+  .example-row(@gutter-size: 20px){
+    &.two-col {
+      > .col:first-child {
+        padding-right: @gutter-size / 2;
+      }
+
+      > .col:first-child + .col {
+        padding-left: @gutter-size / 2;
+      }
+    }
+  }
+}

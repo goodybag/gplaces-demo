@@ -6,6 +6,10 @@
   .section(){
     #sizing > #large > .padding-vertical();
 
+    > .container {
+      justify-content: space-between;
+    }
+
     &.big-ol-section {
       #sizing > #extra-large > .padding-vertical();
     }
@@ -16,7 +20,12 @@
       font-weight: 300;
     }
 
+    .section-title > .fa {
+      margin-right: 12px;
+    }
+
     .theme('purple-red');
+    .theme('gray-dark-blue');
     .theme('dark');
 
     .theme-purple-red &,
@@ -27,12 +36,16 @@
 
   .theme( @theme ){
     @selector: e(@theme);
-    
+
     .theme-@{selector} &,
     &.theme-@{selector} {
       .get-theme( @theme );
       .background();
       .color();
+
+      .hljs {
+        .background();
+      }
     }
   }
 }

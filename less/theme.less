@@ -4,12 +4,24 @@
 
 .get-theme( @theme ) when ( @theme = 'purple-red' ){ #themes > #purple-red(); }
 .get-theme( @theme ) when ( @theme = 'dark' ){ #themes > #dark(); }
+.get-theme( @theme ) when ( @theme = 'gray-dark-blue' ){ #themes > #gray-dark-blue(); }
 
 #themes {
-  .create( @bg, @bg-secondary, @_color ){
+
+  .create( @bg, @bg-secondary, @text-color ){
+    .create( @bg, @bg-secondary, @text-color, @text-color );
+  }
+
+  .create(
+      @bg
+    , @bg-secondary
+    , @text-color
+    , @anchor-color
+    ){
     @background: @bg;
     @background-secondary: @bg-secondary;
-    @color: @_color;
+    @color: @text-color;
+    @anchor: @anchor-color;
 
     .background(){
       background: @background;
@@ -18,17 +30,27 @@
     .color(){
       color: @color;
     }
+
+    .anchor(){
+      color: @anchor;
+    }
   }
 
   #purple-red {
     #themes > .create( @palette-purple, @palette-red, #fff );
 
     .background(){
-      background: linear-gradient( 90deg, @background 10%, @background-secondary 90% );
+      background:
+        url('/img/lines.svg'),
+        linear-gradient( 90deg, @background 10%, @background-secondary 90% );
     }
   }
 
   #dark {
     #themes > .create( @palette-gray-dark, @palette-gray-dark, #fff );
+  }
+
+  #gray-dark-blue {
+    #themes > .create( @palette-gray-dark-blue, @palette-gray-dark-blue, #fff );
   }
 }

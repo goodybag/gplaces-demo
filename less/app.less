@@ -26,16 +26,24 @@
 @import "./theme.less";
 
 @import "./components/typography.less";
+@import "./components/anchor.less";
 @import "./components/goodybag-logo.less";
 @import "./components/input.less";
 @import "./components/container.less";
 @import "./components/section.less";
+@import "./components/flex-cols.less";
+@import "./components/logo-support.less";
+@import "./components/example-row.less";
 
 #components > .typography();
 
 .container { #components > .container( 1024px ); }
 .section { #components > .section(); }
-.goodybag-logo { #components > .goodybag-logo(250px); }
+.logo-support { #components > .logo-support(); }
+.goodybag-logo { #components > .goodybag-logo(17rem); }
+.flex-cols { #components > .flex-cols(2rem); }
+.example-row { #components > .example-row(4rem); }
+a { #components > .anchor(); }
 input { #components > .input(); }
 
 * {
@@ -47,10 +55,6 @@ html, body {
   margin: 0;
   padding: 0;
   color: @palette-gray-dark;
-}
-
-a {
-  color: @palette-purple;
 }
 
 #intro-section {

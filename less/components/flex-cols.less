@@ -1,0 +1,22 @@
+///////////////
+// Flex Cols //
+///////////////
+
+#components {
+  .flex-cols( @gutter-size: 10px ){
+    #util > #flex > .display();
+    #util > #flex > .direction(row);
+
+    margin: -(@gutter-size * 2) 0 0 -(@gutter-size * 2);
+
+    > .col {
+      #util > #flex > .flex();
+      margin: @gutter-size;
+    }
+
+    // @media screen and ( max-width: @width ){
+    //   #sizing > #standard > .padding-horizontal();
+    //   #util > #flex > .direction(column);
+    // }
+  }
+}

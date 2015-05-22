@@ -1,0 +1,22 @@
+/////////////
+// Anchors //
+/////////////
+
+#components {
+  .anchor(){
+    color: @palette-purple;
+
+    .theme('purple-red');
+    .theme('gray-dark-blue');
+    .theme('dark');
+  }
+
+  .theme( @theme ){
+    .get-theme(@theme);
+    @selector: e(@theme);
+    .theme-@{selector} &,
+    &.theme-@{selector} {
+      .anchor();
+    }
+  }
+}
