@@ -3,7 +3,7 @@
 /////////////////
 
 #components {
-  .example-row(@gutter-size: 20px){
+  .example-row(@gutter-size: 20px, @max-width){
     &.two-col {
       > .col:first-child {
         padding-right: @gutter-size / 2;
@@ -11,6 +11,13 @@
 
       > .col:first-child + .col {
         padding-left: @gutter-size / 2;
+      }
+    }
+
+    @media screen and ( max-width: @max-width ){
+      .col {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
       }
     }
   }

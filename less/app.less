@@ -24,6 +24,7 @@
 @import "./variables.less";
 @import "./mixins.less";
 @import "./theme.less";
+@import "./frills.less";
 
 @import "./components/typography.less";
 @import "./components/anchor.less";
@@ -36,15 +37,16 @@
 @import "./components/logo-support.less";
 @import "./components/example-row.less";
 
+#animations > .init();
 #components > .typography();
 
-.container { #components > .container( 1024px ); }
+.container { #components > .container( @container-width ); }
 .section { #components > .section(); }
 .footer { #components > .footer(); }
 .logo-support { #components > .logo-support(); }
-.goodybag-logo { #components > .goodybag-logo(17rem); }
-.flex-cols { #components > .flex-cols(2rem); }
-.example-row { #components > .example-row(4rem); }
+.goodybag-logo { #components > .goodybag-logo( 17rem ); }
+.flex-cols { #components > .flex-cols( 2rem ); }
+.example-row { #components > .example-row( 4rem, @container-width ); }
 a { #components > .anchor(); }
 input { #components > .input(); }
 
@@ -60,13 +62,12 @@ html, body {
 }
 
 #intro-section {
-  > .container {
-    #util > #flex > .display();
-    #util > #flex > .direction(row);
+  @media screen and ( max-width: @breakpoint-mobile ){
+    overflow: hidden;
   }
-  
+
   .intro-text {
-    width: 70%;
+    flex: 2;
   }
 
   .intro-example {
@@ -75,8 +76,14 @@ html, body {
   }
 
   .intro-supporting-graphic {
-    width: 30%;
+    flex: 1;
     text-align: center;
+
+
+    @media screen and ( max-width: @breakpoint-mobile ){
+      margin-top: 20px;
+      margin-bottom: -250px;
+    }
   }
 
   .hljs {
