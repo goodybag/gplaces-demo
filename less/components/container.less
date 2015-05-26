@@ -23,6 +23,9 @@
     .col {
       #util > #flex > .flex();
       width: 50%;
+      @media screen and ( max-width: @breakpoint-mobile ){
+        width: inherit;
+      }
     }
   }
 }
