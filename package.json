@@ -23,7 +23,7 @@
     "express": "^4.12.3",
     "font-awesome": "^4.3.0",
     "forky": "^0.3.0",
-    "gplaces": "^1.0.3",
+    "gplaces": "^1.0.4",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.3.0",
     "gulp-concat": "^2.5.2",
